@@ -1,0 +1,16 @@
+{
+  "name": "ast-node-finder",
+  "version": "1.0.0",
+  "description": "JSCodeshift find api automatically generated from code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ast",
+    "jscodeshift",
+    "ast-explorer"
+  ],
+  "author": "Rajasegar Chandran",
+  "license": "MIT"
+}
