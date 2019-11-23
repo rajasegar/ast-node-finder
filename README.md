@@ -11,7 +11,7 @@ const source = `foo.bar.baz(1,2,3)`;
 const ast = parse(source);
 
 // Pass the node from ast and get the find api
-console.log(findQuery(ast.program.body[0]));
+console.log(findQuery(ast.program.body[0].expression));
 ```
 
 ### Output

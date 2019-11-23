@@ -4,7 +4,9 @@
   "description": "JSCodeshift find api automatically generated from code",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
+    "deploy": "npm version patch && git push && git push --tags && npm publish",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "keywords": [
     "ast",
@@ -12,5 +14,11 @@
     "ast-explorer"
   ],
   "author": "Rajasegar Chandran",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "coveralls": "^3.0.8",
+    "mocha": "^6.2.2",
+    "nyc": "^14.1.1",
+    "recast": "^0.18.5"
+  }
 }

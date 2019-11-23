@@ -103,6 +103,16 @@ function callExpressionQuery(node) {
   return str;
 }
 
+function literalQuery(node) {
+  return `root.find(j.Literal, { value: ${node.value} })`;
+}
+
+function variableDeclaratorQuery(node) {
+  return `root.find(j.VariableDeclarator, {
+  id: { name: '${node.id.name}' }
+  });`;
+}
+
 // Build the jscodeshift find query from nodes
 function findQuery(node) {
   let str = '';
@@ -115,6 +125,18 @@ function findQuery(node) {
       str = memberExpressionQuery(node);
       break;
 
+    case 'Literal':
+      str = literalQuery(node);
+      break;
+
+    case 'VariableDeclarator':
+      str = variableDeclaratorQuery(node);
+      break;
+
+    case 'ExportDefaultDeclaration':
+      str = exportDeclaration(node);
+      break;
+
     default:
       console.log('findQuery => ', node.type);
       break;
@@ -125,7 +147,30 @@ function findQuery(node) {
 
 }
 
+
+function dispatchNodes(ast) {
+  let str = '';
+    str = ast.program.body.map(node => {
+      switch(node.type) {
+        case 'ExpressionStatement':
+          return findQuery(node.expression);
+
+        case 'VariableDeclaration':
+          return findQuery(node.declarations[0]);
+
+        default:
+          console.log('pseudoAst => ', node.type); // eslint-disable-line
+          return '';
+      }
+    });
+
+
+    return str;
+ 
+}
+
 module.exports = {
-  findQuery
+  findQuery,
+  dispatchNodes
 };
 
