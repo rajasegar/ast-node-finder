@@ -104,7 +104,8 @@ function callExpressionQuery(node) {
 }
 
 function literalQuery(node) {
-  return `root.find(j.Literal, { value: ${node.value} })`;
+  let value = typeof node.value === 'string' ? `'${node.value}'` : node.value;
+  return `root.find(j.Literal, { value: ${value} })`;
 }
 
 function variableDeclaratorQuery(node) {
