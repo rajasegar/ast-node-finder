@@ -6,7 +6,8 @@
   "scripts": {
     "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
     "deploy": "npm version patch && git push && git push --tags && npm publish",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "eslint ."
   },
   "keywords": [
     "ast",
@@ -17,6 +18,10 @@
   "license": "MIT",
   "devDependencies": {
     "coveralls": "^3.0.8",
+    "eslint": "^6.7.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "mocha": "^6.2.2",
     "nyc": "^14.1.1",
     "recast": "^0.18.5"
