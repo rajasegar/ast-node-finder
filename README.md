@@ -1,4 +1,7 @@
 # ast-node-finder
+
+[![Coverage Status](https://coveralls.io/repos/github/rajasegar/ast-node-finder/badge.svg?branch=master)](https://coveralls.io/github/rajasegar/ast-node-finder?branch=master)
+
 jscodeshift find api automatically generated from code
 
 ## Usage
