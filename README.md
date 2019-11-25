@@ -3,7 +3,8 @@
 [![Coverage Status](https://coveralls.io/repos/github/rajasegar/ast-node-finder/badge.svg?branch=master)](https://coveralls.io/github/rajasegar/ast-node-finder?branch=master)
 [![Version](https://img.shields.io/npm/v/ast-node-finder.svg)](https://npmjs.org/package/ast-node-finder)
 
-jscodeshift find api automatically generated from code
+[jscodeshift](https://github.com/facebook/jscodeshift) find api automatically generated from code
+Checkout the api in this [playground](https://rajasegar.github.io/ast-finder/)
 
 ## Usage
 ```js
