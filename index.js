@@ -114,6 +114,30 @@ function variableDeclaratorQuery(node) {
   });`;
 }
 
+function expressionStatementQuery(node) {
+  let { expression } = node;
+  let str = '';
+  switch(expression.type) {
+    case 'CallExpression':
+      str = `root.find(j.ExpressionStatement, {
+      expression: {
+      ${calleeQuery(expression)}
+      }
+      })`;
+      break;
+
+    case 'MemberExpression':
+      str = `root.find(j.ExpressionStatement, {
+      expression: {
+      ${calleeQuery(expression)}
+      }
+      })`;
+      break;
+  }
+
+  return str;
+}
+
 // Build the jscodeshift find query from nodes
 function findQuery(node) {
   let str = '';
@@ -138,6 +162,10 @@ function findQuery(node) {
       str = exportDeclaration(node);
       break;
 
+    case 'ExpressionStatement':
+      str = expressionStatementQuery(node);
+      break;
+
     default:
       console.log('findQuery => ', node.type);
       break;
@@ -154,7 +182,7 @@ function dispatchNodes(ast) {
     str = ast.program.body.map(node => {
       switch(node.type) {
         case 'ExpressionStatement':
-          return findQuery(node.expression);
+          return findQuery(node);
 
         case 'VariableDeclaration':
           return findQuery(node.declarations[0]);

@@ -15,6 +15,7 @@
     "ast-explorer"
   ],
   "author": "Rajasegar Chandran",
+  "repository": "https://github.com/rajasegar/ast-node-finder",
   "license": "MIT",
   "devDependencies": {
     "coveralls": "^3.0.8",
