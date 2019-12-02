@@ -55,4 +55,43 @@ describe('Core Finder api', function() {
 
     assert.strictEqual(query, output);
   });
+
+  it('should a generate a new expression query', function() {
+    const fixturePath = 'test/fixtures/newExpression';
+    const inputFixture = `${fixturePath}.input.js`;
+    const outputFixture = `${fixturePath}.output.js`;
+    const input = fs.readFileSync(inputFixture, 'utf-8');
+    const output = fs.readFileSync(outputFixture, 'utf-8');
+    let ast = parse(input);
+
+    let query =  dispatchNodes(ast).join();
+
+    assert.strictEqual(query, output);
+  });
+
+  it('should a generate an import declaration query', function() {
+    const fixturePath = 'test/fixtures/importDeclaration';
+    const inputFixture = `${fixturePath}.input.js`;
+    const outputFixture = `${fixturePath}.output.js`;
+    const input = fs.readFileSync(inputFixture, 'utf-8');
+    const output = fs.readFileSync(outputFixture, 'utf-8');
+    let ast = parse(input);
+
+    let query =  dispatchNodes(ast).join();
+
+    assert.strictEqual(query, output);
+  });
+
+  it('should a generate an export default declaration query', function() {
+    const fixturePath = 'test/fixtures/exportDefaultDeclaration';
+    const inputFixture = `${fixturePath}.input.js`;
+    const outputFixture = `${fixturePath}.output.js`;
+    const input = fs.readFileSync(inputFixture, 'utf-8');
+    const output = fs.readFileSync(outputFixture, 'utf-8');
+    let ast = parse(input);
+
+    let query =  dispatchNodes(ast).join();
+
+    assert.strictEqual(query, output);
+  });
 });

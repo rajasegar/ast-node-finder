@@ -1,142 +1,15 @@
 'use strict';
 
-// Build object query
-function objectQuery(node) {
-  let str = '';
-  switch(node.type) {
-    case 'Identifier':
-      str = ` object: { name: '${node.name}' } `;
-      break;
-
-    case 'CallExpression':
-      str = ` object: { ${calleeQuery(node.callee)} }, `;
-      break;
-
-    case 'MemberExpression':
-      str = ` object: {  ${objectQuery(node.object)} ,
-        property: { name: '${node.property.name}' }
-        } `;
-      break;
-
-    default:
-      console.log('objectQuery::object => ', node.type);
-      break;
-  }
-
-  return str;
-}
-
-// Build callee query
-function calleeQuery(node) {
-  let str = '';
-  if(node.type === 'MemberExpression') {
-    let { object, property } = node;
-    let obj = '';
-    let prop = '';
-
-    obj = objectQuery(object);
-    switch(property.type) {
-      case 'Identifier':
-        prop = `property: { name: '${property.name}' }`;
-        break;
-
-      default:
-        console.log('calleeQuery::property => ', property.type);
-        break;
-    }
-
-    str =  `callee: {
-    ${obj},
-    ${prop}
-  }`;
-
-  } else if (node.type === 'CallExpression') {
-    str = ` callee: ${calleeQuery(node.callee)} `;
-
-  } else if (node.type === 'Identifier') {
-
-    str = ` callee: { name: '${node.name}' } `;
-  }
-  else {
-
-    console.error('Unknown node type in calleeQuery');
-  }
-
-  return str;
-
-}
-
-// Build memberExpression query
-function memberExpressionQuery(node) {
-  let str = '';
-
-    let { object, property } = node;
-    let obj = '';
-    let prop = '';
-
-    obj = objectQuery(object);
-
-    switch(property.type) {
-      case 'Identifier':
-        prop = `property: { name: '${property.name}' }`;
-        break;
-
-      default:
-        console.log('buildMemberExpressionQuery::property => ', property.type);
-        break;
-    }
-
-    str =  `root.find(j.MemberExpression, {
-    ${obj},
-    ${prop}
-    })`;
-
-  return str;
-}
-
-// Build callExpression query
-function callExpressionQuery(node) {
-  let str = '';
-  str = `root.find(j.CallExpression, {
-      ${calleeQuery(node.callee)} 
-      })`;
-  return str;
-}
-
-function literalQuery(node) {
-  let value = typeof node.value === 'string' ? `'${node.value}'` : node.value;
-  return `root.find(j.Literal, { value: ${value} })`;
-}
-
-function variableDeclaratorQuery(node) {
-  return `root.find(j.VariableDeclarator, {
-  id: { name: '${node.id.name}' }
-  });`;
-}
-
-function expressionStatementQuery(node) {
-  let { expression } = node;
-  let str = '';
-  switch(expression.type) {
-    case 'CallExpression':
-      str = `root.find(j.ExpressionStatement, {
-      expression: {
-      ${calleeQuery(expression)}
-      }
-      })`;
-      break;
-
-    case 'MemberExpression':
-      str = `root.find(j.ExpressionStatement, {
-      expression: {
-      ${calleeQuery(expression)}
-      }
-      })`;
-      break;
-  }
-
-  return str;
-}
+const {
+ callExpressionQuery,
+  literalQuery,
+  memberExpressionQuery,
+  newExpressionQuery,
+  expressionStatementQuery,
+  variableDeclaratorQuery,
+  importDeclarationQuery,
+  exportDefaultDeclarationQuery
+} = require('./lib/query');
 
 // Build the jscodeshift find query from nodes
 function findQuery(node) {
@@ -159,11 +32,19 @@ function findQuery(node) {
       break;
 
     case 'ExportDefaultDeclaration':
-      str = exportDeclaration(node);
+      str = exportDefaultDeclarationQuery(node);
       break;
 
     case 'ExpressionStatement':
       str = expressionStatementQuery(node);
+      break;
+
+    case 'NewExpression':
+      str = newExpressionQuery(node);
+      break;
+
+    case 'ImportDeclaration':
+      str = importDeclarationQuery(node);
       break;
 
     default:
@@ -182,13 +63,19 @@ function dispatchNodes(ast) {
     str = ast.program.body.map(node => {
       switch(node.type) {
         case 'ExpressionStatement':
-          return findQuery(node);
+          return findQuery(node.expression);
 
         case 'VariableDeclaration':
           return findQuery(node.declarations[0]);
 
+        case 'ImportDeclaration':
+          return findQuery(node);
+
+        case 'ExportDefaultDeclaration':
+          return findQuery(node);
+
         default:
-          console.log('pseudoAst => ', node.type); // eslint-disable-line
+          console.log('dipatchNodes => ', node.type); // eslint-disable-line
           return '';
       }
     });
