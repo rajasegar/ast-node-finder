@@ -1,6 +1,6 @@
 {
   "name": "ast-node-finder",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "JSCodeshift find api automatically generated from code",
   "main": "index.js",
   "scripts": {
