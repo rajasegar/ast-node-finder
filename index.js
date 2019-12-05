@@ -1,5 +1,7 @@
 'use strict';
 
+const query = require('./lib/query');
+
 const {
  callExpressionQuery,
   literalQuery,
@@ -8,8 +10,10 @@ const {
   expressionStatementQuery,
   variableDeclaratorQuery,
   importDeclarationQuery,
-  exportDefaultDeclarationQuery
-} = require('./lib/query');
+  exportDefaultDeclarationQuery,
+  identifier,
+  functionDeclaration
+} = query;
 
 // Build the jscodeshift find query from nodes
 function findQuery(node) {
@@ -47,6 +51,14 @@ function findQuery(node) {
       str = importDeclarationQuery(node);
       break;
 
+    case 'Identifier':
+      str = identifier(node);
+      break;
+
+        case 'FunctionDeclaration':
+          str = functionDeclaration(node);
+      break;
+
     default:
       console.log('findQuery => ', node.type);
       break;
@@ -74,8 +86,11 @@ function dispatchNodes(ast) {
         case 'ExportDefaultDeclaration':
           return findQuery(node);
 
+        case 'FunctionDeclaration':
+          return findQuery(node);
+
         default:
-          console.log('dipatchNodes => ', node.type); // eslint-disable-line
+          console.log('dispatchNodes => ', node.type); // eslint-disable-line
           return '';
       }
     });
@@ -87,6 +102,7 @@ function dispatchNodes(ast) {
 
 module.exports = {
   findQuery,
-  dispatchNodes
+  dispatchNodes,
+  query
 };
 
