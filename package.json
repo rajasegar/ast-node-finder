@@ -26,5 +26,8 @@
     "mocha": "^6.2.2",
     "nyc": "^14.1.1",
     "recast": "^0.18.5"
+  },
+  "dependencies": {
+    "common-tags": "^1.8.0"
   }
 }

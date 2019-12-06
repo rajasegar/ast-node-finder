@@ -12,20 +12,7 @@ describe('Core Finder api', function() {
     const output = fs.readFileSync(outputFixture, 'utf-8');
     let ast = parse(input);
 
-    let query =  dispatchNodes(ast).join();
-
-    assert.strictEqual(query, output);
-  });
-
-  it('should a generate a memberExpression query', function() {
-    const fixturePath = 'test/fixtures/memberExpression';
-    const inputFixture = `${fixturePath}.input.js`;
-    const outputFixture = `${fixturePath}.output.js`;
-    const input = fs.readFileSync(inputFixture, 'utf-8');
-    const output = fs.readFileSync(outputFixture, 'utf-8');
-    let ast = parse(input);
-
-    let query =  dispatchNodes(ast).join();
+    let query =  dispatchNodes(ast).join('\n');
 
     assert.strictEqual(query, output);
   });
