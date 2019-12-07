@@ -50,8 +50,8 @@ function findQuery(node) {
       str = identifier(node);
       break;
 
-        case 'FunctionDeclaration':
-          str = functionDeclaration(node);
+    case 'FunctionDeclaration':
+      str = functionDeclaration(node);
       break;
 
     default:
