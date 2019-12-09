@@ -3,7 +3,9 @@
 const query = require('./lib/query');
 
 const {
- callExpressionQuery,
+  assignmentExpression,
+  callExpressionQuery,
+  memberExpressionQuery,
   literalQuery,
   newExpressionQuery,
   expressionStatementQuery,
@@ -20,6 +22,10 @@ function findQuery(node) {
   switch(node.type) {
     case 'CallExpression':
       str = callExpressionQuery(node);       
+      break;
+
+    case 'MemberExpression':
+      str = memberExpressionQuery(node);       
       break;
 
     case 'Literal':
@@ -52,6 +58,10 @@ function findQuery(node) {
 
     case 'FunctionDeclaration':
       str = functionDeclaration(node);
+      break;
+
+    case 'AssignmentExpression':
+      str = assignmentExpression(node);
       break;
 
     default:
