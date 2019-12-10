@@ -4,7 +4,10 @@
 [![Version](https://img.shields.io/npm/v/ast-node-finder.svg)](https://npmjs.org/package/ast-node-finder)
 
 [jscodeshift](https://github.com/facebook/jscodeshift) find api automatically generated from code
+
 Checkout the api in this [playground](https://rajasegar.github.io/ast-finder/)
+
+Read the [introductory blog post](http://hangaroundtheweb.com/2019/12/ast-finder-finding-ast-nodes-from-code/) for more details.
 
 ## Usage
 ```js
@@ -35,8 +38,3 @@ root.find(j.CallExpression, {
 });
 ```
 
-## Currently supported nodes
-- CallExpresssion
-- MemberExpression
-
-## More coming soon...
