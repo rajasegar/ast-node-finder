@@ -77,7 +77,7 @@ function findQuery(node) {
 
 function dispatchNodes(ast) {
   let str = '';
-    str = ast.program.body.map(node => {
+    str = ast.program && ast.program.body.map(node => {
       switch(node.type) {
         case 'ExpressionStatement':
           return findQuery(node.expression);
