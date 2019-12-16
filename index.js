@@ -72,9 +72,7 @@ function findQuery(node) {
   }
 
   return str;
-
 }
-
 
 function dispatchNodes(ast) {
   let str = '';
@@ -101,9 +99,7 @@ function dispatchNodes(ast) {
       }
     });
 
-
     return str;
- 
 }
 
 module.exports = {
