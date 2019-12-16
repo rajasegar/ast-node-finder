@@ -1,6 +1,7 @@
 'use strict';
 
 const query = require('./lib/query');
+const glimmer = require('./lib/glimmer');
 
 const {
   assignmentExpression,
@@ -108,6 +109,7 @@ function dispatchNodes(ast) {
 module.exports = {
   findQuery,
   dispatchNodes,
-  query
+  query,
+  glimmer
 };
 
