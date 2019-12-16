@@ -24,10 +24,11 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "mocha": "^6.2.2",
-    "nyc": "^14.1.1",
-    "recast": "^0.18.5"
+    "nyc": "^14.1.1"
   },
   "dependencies": {
-    "common-tags": "^1.8.0"
+    "common-tags": "^1.8.0",
+    "ember-template-recast": "^3.3.0",
+    "recast": "^0.18.5"
   }
 }
