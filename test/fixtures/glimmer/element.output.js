@@ -1,5 +1,7 @@
 return {
   ElementNode(node) {
-    return node;
+    if(node.tag === 'div') {
+      return node;
+    }
   }
 };

@@ -1,5 +1,7 @@
 return {
   MustacheStatement(node) {
-    return node;
+    if(node.path.original === 'hello') {
+      return node;
+    }
   }
 };
