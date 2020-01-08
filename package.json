@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
-    "deploy-patch": "npm version patch && git push && git push --tags && npm publish",
+    "deploy": "npm version patch && git push && git push --tags && npm publish",
     "deploy-minor": "npm version minor && git push && git push --tags && npm publish",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "debug": "mocha --forbid-only --inspect-brk \"test/**/*.test.js\""
   },
   "keywords": [
     "ast",

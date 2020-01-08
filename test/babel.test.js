@@ -3,10 +3,16 @@ const fs = require('fs');
 const globby  = require('globby');
 const path = require('path');
 const { parse } = require('recast');
-const { dispatchNodes } = require('../index.js');
+const { babel } = require('../index.js');
 
-describe('Core Finder api', function() {
-  let fixtureDir = 'test/fixtures/core';
+function parseWithBabel(source) {
+  return parse(source, {
+    parser: require('recast/parsers/babel')
+  });
+}
+
+describe('Babel Finder api', function() {
+  let fixtureDir = 'test/fixtures/babel';
   globby
     .sync('**/*.input.*', {
       cwd: fixtureDir,
@@ -20,9 +26,9 @@ describe('Core Finder api', function() {
 
         const input = fs.readFileSync(inputFixture, 'utf-8');
         const output = fs.readFileSync(outputFixture, 'utf-8');
-        let ast = parse(input);
+        let ast = parseWithBabel(input);
 
-        let query =  dispatchNodes(ast).join('\n');
+        let query =  babel.dispatchNodes(ast).join('\n');
 
         assert.strictEqual(query, output);
       });

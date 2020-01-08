@@ -1,6 +1,7 @@
 'use strict';
 
-const query = require('./lib/query');
+const query = require('./lib/query/recast');
+const babel = require('./lib/query/babel');
 const glimmer = require('./lib/glimmer');
 
 const {
@@ -106,6 +107,7 @@ module.exports = {
   findQuery,
   dispatchNodes,
   query,
-  glimmer
+  glimmer,
+  babel
 };
 
