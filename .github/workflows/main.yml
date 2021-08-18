@@ -1,6 +1,9 @@
 name: Node CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -9,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x]
+        node-version: [12.x]
 
     steps:
     - uses: actions/checkout@v1
