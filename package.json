@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "common-tags": "^1.8.0",
-    "ember-template-recast": "^3.3.0",
+    "ember-template-recast": "^5.0.3",
     "recast": "^0.18.5"
   },
   "engines": {
