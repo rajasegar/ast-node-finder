@@ -21,8 +21,13 @@ jobs:
       run: |
         npm install
         npm test
-        npm run coverage
+        # npm run coverage
       env:
         CI: true
         COVERALLS_REPO_TOKEN: "${{ secrets.COVERALLS_REPO_TOKEN }}"
         COVERALLS_GIT_BRANCH: "${{ github.ref }}"
+    - name: Release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      run: npm run semantic-release
