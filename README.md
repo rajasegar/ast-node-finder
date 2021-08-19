@@ -1,7 +1,10 @@
 # ast-node-finder
-[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Frajasegar%2Fast-node-finder%2Fbadge&style=flat&label=build)](https://actions-badge.atrox.dev/rajasegar/ast-node-finder/goto)
+![Build and Deploy](https://github.com/rajasegar/ast-node-finder/workflows/Node%20CI/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/rajasegar/ast-node-finder/badge.svg?branch=refs/heads/master)](https://coveralls.io/github/rajasegar/ast-node-finder?branch=refs/heads/master)
 [![Version](https://img.shields.io/npm/v/ast-node-finder.svg)](https://npmjs.org/package/ast-node-finder)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+
 
 [jscodeshift](https://github.com/facebook/jscodeshift) find api automatically generated from code
 
