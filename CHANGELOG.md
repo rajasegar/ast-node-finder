@@ -1,3 +1,10 @@
+## [2.0.8](https://github.com/rajasegar/ast-node-finder/compare/v2.0.7...v2.0.8) (2021-08-18)
+
+
+### Bug Fixes
+
+* **deps:** bump ember-template-recast from 3.3.0 to 5.0.3 ([d143279](https://github.com/rajasegar/ast-node-finder/commit/d143279fb1060022c52958318663e7ac97a3a588))
+
 ## [2.0.7](https://github.com/rajasegar/ast-node-finder/compare/v2.0.6...v2.0.7) (2021-08-18)
 
 
