@@ -1,3 +1,10 @@
+## [2.0.9](https://github.com/rajasegar/ast-node-finder/compare/v2.0.8...v2.0.9) (2021-12-28)
+
+
+### Bug Fixes
+
+* **deps:** bump recast from 0.18.5 to 0.20.5 ([7d87321](https://github.com/rajasegar/ast-node-finder/commit/7d873213061f7a4ce9415dbded5db1bbf61b0ae1))
+
 ## [2.0.8](https://github.com/rajasegar/ast-node-finder/compare/v2.0.7...v2.0.8) (2021-08-18)
 
 
