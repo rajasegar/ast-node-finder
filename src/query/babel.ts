@@ -1,7 +1,10 @@
-const {stripIndent} = require('common-tags');
+import * as commonTags from 'common-tags';
+const { stripIndent } = commonTags;
+
+import { Node, Ast } from '../typings';
 
 // Build object query
-function objectQuery(node) {
+function objectQuery(node: Node): string {
   let str = '';
   switch(node.type) {
     case 'Identifier':
@@ -9,7 +12,7 @@ function objectQuery(node) {
       break;
 
      case 'CallExpression':
-      str = `object: { ${calleeQuery(node.callee)} }`;
+      str = `object: { ${callee(node.callee)} }`;
       break;
 
     case 'MemberExpression':
@@ -32,7 +35,7 @@ function objectQuery(node) {
 }
 
 // Build callee query
-function calleeQuery(node) {
+function callee(node: Node): string {
   let str = '';
   if(node.type === 'MemberExpression') {
     let { object, property } = node;
@@ -72,7 +75,7 @@ function calleeQuery(node) {
 }
 
 // Build memberExpression query
-function memberExpressionQuery(node) {
+function memberExpression(node: Node): string {
   let str = '';
 
     let { object, property } = node;
@@ -100,13 +103,13 @@ function memberExpressionQuery(node) {
 }
 
 // Build callExpression query
-function callExpressionQuery(node) {
+function callExpression(node: Node): string {
   let str = '';
   const { arguments: args } = node;
 
   // Deliberately filtering out other argument nodes here
-  let filteredArgs = args.filter(a => ['Literal','Identifier'].includes(a.type));
-  let _filter = filteredArgs.map((a,i) => {
+    let filteredArgs = args.filter((a: Node) => ['Identifier'].includes(a.type));
+    let _filter = filteredArgs.map((a: Node,i: number) => {
     let temp = '';
     switch(a.type) {
       case 'Literal':
@@ -127,7 +130,7 @@ function callExpressionQuery(node) {
   if(filteredArgs.length > 0) {
   str = stripIndent`
   root.find(j.CallExpression, {
-    ${calleeQuery(node.callee)}
+    ${callee(node.callee)}
   })
   .filter(path => {
     return ${_filter}
@@ -135,31 +138,27 @@ function callExpressionQuery(node) {
   } else {
   str = stripIndent`
   root.find(j.CallExpression, {
-    ${calleeQuery(node.callee)}
+    ${callee(node.callee)}
   })`;
   }
   return str;
 }
 
-function literalQuery(node) {
-  let value = typeof node.value === 'string' ? `'${node.value}'` : node.value;
-  return `root.find(j.Literal, { value: ${value} })`;
-}
 
-function variableDeclaratorQuery(node) {
+function variableDeclarator(node: Node): string {
   return `root.find(j.VariableDeclarator, {
   id: { name: '${node.id.name}' }
-  });`;
+  })`;
 }
 
-function expressionStatementQuery(node) {
+function expressionStatement(node: Node): string {
   let { expression } = node;
   let str = '';
   switch(expression.type) {
     case 'CallExpression':
       str = `root.find(j.ExpressionStatement, {
       expression: {
-      ${calleeQuery(expression)}
+      ${callee(expression)}
       }
       })`;
       break;
@@ -167,7 +166,7 @@ function expressionStatementQuery(node) {
     case 'MemberExpression':
       str = `root.find(j.ExpressionStatement, {
       expression: {
-      ${calleeQuery(expression)}
+      ${callee(expression)}
       }
       })`;
       break;
@@ -177,7 +176,7 @@ function expressionStatementQuery(node) {
 }
 
 // New Expression Query
-function newExpressionQuery(node) {
+function newExpression(node: Node): string {
   let str = '';
   str =   `root.find(j.NewExpression, {
   callee: { name: '${node.callee.name}' }
@@ -186,22 +185,30 @@ function newExpressionQuery(node) {
 }
 
 // Import Declaration query
-function importDeclarationQuery(node) {
+function importDeclaration(node: Node): string {
   let str = '';
   str = `root.find(j.ImportDeclaration, {
-  source: ${node.source.raw}
+  source: { value: '${node.source.value}' }
 })`;
   return str;
 }
 
-function exportDefaultDeclarationQuery(node) {
+function exportDefaultDeclaration(node: Node): string {
   let str = '';
   switch(node.declaration.type) {
 
     case 'CallExpression':
   str =   `root.find(j.ExportDefaultDeclaration, {
-  declaration: { ${calleeQuery(node.declaration.callee)} }
+  declaration: { ${callee(node.declaration.callee)} }
   })`;
+      break;
+
+    case 'ClassDeclaration':
+      str = `root.find(j.ExportDefaultDeclaration, {
+        declaration: {
+          type: 'ClassDeclaration'
+        }
+      })`;
       break;
 
     default:
@@ -211,7 +218,7 @@ function exportDefaultDeclarationQuery(node) {
   return str;
 }
 
-function identifier(node) {
+function identifier(node: Node): string {
   let str = '';
   str = `root.find(j.Identifier, {
   name: '${node.name}'
@@ -219,7 +226,7 @@ function identifier(node) {
   return str;
 }
 
-function functionDeclaration(node) {
+function functionDeclaration(node: Node): string {
   let str = '';
   str = `root.find(j.FunctionDeclaration, {
   id: { name: '${node.id.name}' }
@@ -227,14 +234,24 @@ function functionDeclaration(node) {
   return str;
 }
 
-function assignmentExpression(node) {
+function assignmentExpression(node: Node): string {
   let { operator, left, right } = node;
   let str = '';
   let val = '';
   let _right = '';
   switch(right.type) {
-    case 'Literal':
-      val = typeof right.value === 'string' ? `'${right.value}'` : right.value;
+    case 'StringLiteral':
+      val =  `'${right.value}'`;
+      _right = `right: { value: ${val} }`;
+      break;
+
+    case 'NumericLiteral':
+      val =  right.value;
+      _right = `right: { value: ${val} }`;
+      break;
+
+    case 'BooleanLiteral':
+      val =  right.value;
       _right = `right: { value: ${val} }`;
       break;
 
@@ -265,16 +282,62 @@ function assignmentExpression(node) {
   return str;
 }
 
-module.exports = {
-  assignmentExpression,
-  callExpressionQuery,
-  literalQuery,
-  memberExpressionQuery,
-  newExpressionQuery,
-  expressionStatementQuery,
-  variableDeclaratorQuery,
-  importDeclarationQuery,
-  exportDefaultDeclarationQuery,
-  identifier,
-  functionDeclaration
-};
+function expressionQuery(node: Node): string {
+  let str = '';
+  switch(node.type) {
+    case 'CallExpression':
+    str = callExpression(node);
+    break;
+
+    case 'AssignmentExpression':
+    str = assignmentExpression(node);
+    break;
+
+    case 'Identifier':
+    str = identifier(node);
+    break;
+
+    case 'MemberExpression':
+    str = memberExpression(node);
+    break;
+
+    case 'NewExpression':
+    str = newExpression(node);
+    break;
+
+    default:
+    console.log('expressionQuery => ', node.type);
+    break;
+  }
+  return str;
+}
+
+export function dispatchNodes(ast: Ast,  wrapExpression = false): string {
+  let str = '';
+    str = ast.program && ast.program.body.map((node: Node) => {
+      switch(node.type) {
+        case 'ExpressionStatement':
+          return wrapExpression ? expressionStatement(node.expression) : expressionQuery(node.expression);
+
+        case 'VariableDeclaration':
+          return variableDeclarator(node.declarations[0]);
+
+        case 'ImportDeclaration':
+          return importDeclaration(node);
+
+        case 'ExportDefaultDeclaration':
+          return exportDefaultDeclaration(node);
+
+        case 'FunctionDeclaration':
+          return functionDeclaration(node);
+
+        default:
+          console.log('Babel::dispatchNodes => ', node.type); // eslint-disable-line
+          return '';
+      }
+    });
+
+    return str;
+}
+
+

@@ -1,9 +1,10 @@
-const assert = require('assert');
-const fs = require('fs');
-const globby  = require('globby');
-const path = require('path');
-const { parse } = require('recast');
-const { babel } = require('../index.js');
+import assert from 'assert';
+import fs from 'fs';
+import globby from 'globby';
+import path from 'path';
+
+import {parse } from 'recast';
+import { babel } from '../src/index';
 
 function parseWithBabel(source) {
   return parse(source, {
