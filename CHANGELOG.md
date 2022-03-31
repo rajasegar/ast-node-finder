@@ -1,3 +1,10 @@
+## [3.0.3](https://github.com/rajasegar/ast-node-finder/compare/v3.0.2...v3.0.3) (2022-03-31)
+
+
+### Bug Fixes
+
+* **deps:** bump minimist from 1.2.5 to 1.2.6 ([2fcfe50](https://github.com/rajasegar/ast-node-finder/commit/2fcfe509466d670dff31844de91315644dc05cfc))
+
 ## [3.0.2](https://github.com/rajasegar/ast-node-finder/compare/v3.0.1...v3.0.2) (2022-03-31)
 
 
