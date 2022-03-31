@@ -1,3 +1,10 @@
+## [3.0.4](https://github.com/rajasegar/ast-node-finder/compare/v3.0.3...v3.0.4) (2022-03-31)
+
+
+### Bug Fixes
+
+* **deps:** bump semver-regex from 3.1.2 to 3.1.3 ([0ae2af6](https://github.com/rajasegar/ast-node-finder/commit/0ae2af62f4f62bc12a8a36ebc36f2c37a7b074ab))
+
 ## [3.0.3](https://github.com/rajasegar/ast-node-finder/compare/v3.0.2...v3.0.3) (2022-03-31)
 
 
