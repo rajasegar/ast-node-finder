@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/rajasegar/ast-node-finder/compare/v3.0.0...v3.0.1) (2022-03-31)
+
+
+### Bug Fixes
+
+* **deps:** bump trim-off-newlines from 1.0.1 to 1.0.3 ([5f1f5ca](https://github.com/rajasegar/ast-node-finder/commit/5f1f5ca22b6bdf05c84424fe466134f93d379dc1))
+
 ## [2.0.9](https://github.com/rajasegar/ast-node-finder/compare/v2.0.8...v2.0.9) (2021-12-28)
 
 
