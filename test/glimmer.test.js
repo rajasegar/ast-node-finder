@@ -1,7 +1,8 @@
-const assert = require('assert');
-const fs = require('fs');
-const { parse } = require('ember-template-recast');
-const { dispatchNodes } = require('../lib/glimmer.js');
+import assert from 'assert';
+import fs from 'fs';
+
+import {parse } from 'ember-template-recast';
+import { dispatchNodes } from '../src/glimmer';
 
 describe('Glimmer Finder api', function() {
   it('should a generate an Element query', function() {

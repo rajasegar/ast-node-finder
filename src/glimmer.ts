@@ -1,6 +1,9 @@
-const { stripIndent } = require('common-tags');
+import * as commonTags from 'common-tags';
+const { stripIndent } = commonTags;
 
-function textNode(node, transform) {
+import { Node, Ast } from './typings';
+
+function textNode(transform: string) : string {
   let str = '';
   str = stripIndent`
   return {
@@ -11,7 +14,7 @@ function textNode(node, transform) {
   return str;
 }
 
-function elementNode(node, transform) {
+function elementNode(node: Node, transform: string) : string {
   let str = '';
   transform = transform || `node.tag = node.tag.split("").reverse().join("");`;
   str = stripIndent`
@@ -25,7 +28,7 @@ function elementNode(node, transform) {
   return str;
 }
 
-function blockStatement(node, transform) {
+function blockStatement(node: Node, transform: string): string {
   let str =  '';
   str = stripIndent`
   return {
@@ -38,7 +41,7 @@ function blockStatement(node, transform) {
   return str;
 }
 
-function mustacheStatement(node, transform) {
+function mustacheStatement(node: Node, transform: string): string {
   let str =  '';
   str = stripIndent`
   return {
@@ -51,13 +54,13 @@ function mustacheStatement(node, transform) {
   return str;
 }
 
-function dispatchNodes(ast, transform = 'return node;') {
+function dispatchNodes(ast: Ast, transform = 'return node;'): string[] {
   // Build the Glimmer template api
   let _body = ast && ast.body ? ast.body : [];
-  let _ast = _body.map(node => {
+    let _ast = _body.map((node: Node) => {
     switch (node.type) {
       case "TextNode":
-        return textNode(node, transform);
+        return textNode(transform);
 
       case "ElementNode":
         return elementNode(node, transform);

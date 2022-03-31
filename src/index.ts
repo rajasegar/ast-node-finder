@@ -1,8 +1,10 @@
 'use strict';
 
-const query = require('./lib/query/recast');
-const babel = require('./lib/query/babel');
-const glimmer = require('./lib/glimmer');
+import * as query from './query/recast';
+import * as babel from './query/babel';
+import * as glimmer from './glimmer';
+
+import { Node, Ast } from './typings';
 
 const {
   assignmentExpression,
@@ -18,8 +20,9 @@ const {
   functionDeclaration
 } = query;
 
+
 // Build the jscodeshift find query from nodes
-function findQuery(node) {
+function findQuery(node: Node) {
   let str = '';
   switch(node.type) {
     case 'CallExpression':
@@ -75,9 +78,9 @@ function findQuery(node) {
   return str;
 }
 
-function dispatchNodes(ast) {
+function dispatchNodes(ast: Ast) {
   let str = '';
-    str = ast.program && ast.program.body.map(node => {
+    str = ast.program && ast.program.body.map((node: Node) => {
       switch(node.type) {
         case 'ExpressionStatement':
           return findQuery(node.expression);
@@ -103,7 +106,7 @@ function dispatchNodes(ast) {
     return str;
 }
 
-module.exports = {
+export {
   findQuery,
   dispatchNodes,
   query,

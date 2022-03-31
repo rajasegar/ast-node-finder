@@ -1,9 +1,10 @@
-const assert = require('assert');
-const fs = require('fs');
-const globby  = require('globby');
-const path = require('path');
-const { parse } = require('recast');
-const { dispatchNodes } = require('../index.js');
+import assert from 'assert';
+import fs from 'fs';
+import globby from 'globby';
+import path from 'path';
+
+import {parse } from 'recast';
+import { dispatchNodes } from '../src/index';
 
 describe('Core Finder api', function() {
   let fixtureDir = 'test/fixtures/core';
