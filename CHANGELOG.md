@@ -1,3 +1,10 @@
+## [3.0.2](https://github.com/rajasegar/ast-node-finder/compare/v3.0.1...v3.0.2) (2022-03-31)
+
+
+### Bug Fixes
+
+* **deps:** bump node-fetch from 2.6.1 to 2.6.7 ([c7435ae](https://github.com/rajasegar/ast-node-finder/commit/c7435ae0bebd47674cb69ec09c131edadc49ff68))
+
 ## [3.0.1](https://github.com/rajasegar/ast-node-finder/compare/v3.0.0...v3.0.1) (2022-03-31)
 
 
