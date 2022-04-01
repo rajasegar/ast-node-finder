@@ -40,7 +40,7 @@
     "coveralls": "3.1.1",
     "eslint": "8.12.0",
     "eslint-config-standard": "16.0.3",
-    "eslint-plugin-promise": "5.2.0",
+    "eslint-plugin-promise": "6.0.0",
     "eslint-plugin-standard": "5.0.0",
     "jest": "27.5.1",
     "rollup": "2.70.1",
