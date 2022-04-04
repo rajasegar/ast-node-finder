@@ -1,3 +1,10 @@
+## [3.0.6](https://github.com/rajasegar/ast-node-finder/compare/v3.0.5...v3.0.6) (2022-04-04)
+
+
+### Bug Fixes
+
+* common-tags types issue ([31863fb](https://github.com/rajasegar/ast-node-finder/commit/31863fb2236cd461a9a393fa10bf7118855afd38))
+
 ## [3.0.5](https://github.com/rajasegar/ast-node-finder/compare/v3.0.4...v3.0.5) (2022-04-04)
 
 
