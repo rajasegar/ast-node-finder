@@ -1,7 +1,6 @@
-import * as commonTags from 'common-tags';
-const { stripIndent } = commonTags;
+import { stripIndent } from 'common-tags';
 
-import { Node, Ast } from '../typings';
+import { Node } from '../typings';
 
 // Build object query
 function objectQuery(node: Node): string {

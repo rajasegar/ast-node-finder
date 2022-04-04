@@ -9,6 +9,7 @@ specifiers:
   '@rollup/plugin-typescript': 8.3.1
   '@semantic-release/changelog': 6.0.1
   '@semantic-release/git': 10.0.1
+  '@types/common-tags': ^1.8.1
   babel-jest: 27.5.1
   common-tags: ^1.8.2
   coveralls: 3.1.1
@@ -39,6 +40,7 @@ devDependencies:
   '@rollup/plugin-typescript': 8.3.1_8fb0118e9d69f3600cbb8f144f7d456c
   '@semantic-release/changelog': 6.0.1_semantic-release@19.0.2
   '@semantic-release/git': 10.0.1_semantic-release@19.0.2
+  '@types/common-tags': 1.8.1
   babel-jest: 27.5.1_@babel+core@7.17.8
   coveralls: 3.1.1
   eslint: 8.12.0
@@ -1949,6 +1951,10 @@ packages:
     resolution: {integrity: sha512-K2waXdXBi2302XUdcHcR1jCeU0LL4TD9HRs/gk0N2Xvrht+G/BfJa4QObBQZfhMdxiCpV3COl5Nfq4uKTeTnJA==}
     dependencies:
       '@babel/types': 7.17.0
+    dev: true
+
+  /@types/common-tags/1.8.1:
+    resolution: {integrity: sha512-20R/mDpKSPWdJs5TOpz3e7zqbeCNuMCPhV7Yndk9KU2Rbij2r5W4RzwDPkzC+2lzUqXYu9rFzTktCBnDjHuNQg==}
     dev: true
 
   /@types/estree/0.0.39:

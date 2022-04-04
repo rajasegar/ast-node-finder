@@ -2,151 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.stripIndents = exports.stripIndent = exports.oneLineInlineLists = exports.inlineLists = exports.oneLineCommaListsAnd = exports.oneLineCommaListsOr = exports.oneLineCommaLists = exports.oneLineTrim = exports.oneLine = exports.safeHtml = exports.source = exports.codeBlock = exports.html = exports.commaListsOr = exports.commaListsAnd = exports.commaLists = exports.removeNonPrintingValuesTransformer = exports.splitStringTransformer = exports.inlineArrayTransformer = exports.replaceStringTransformer = exports.replaceSubstitutionTransformer = exports.replaceResultTransformer = exports.stripIndentTransformer = exports.trimResultTransformer = exports.TemplateTag = undefined;
+var commonTags = require('common-tags');
 
-var _TemplateTag2 = require('./TemplateTag');
-
-var _TemplateTag3 = _interopRequireDefault(_TemplateTag2);
-
-var _trimResultTransformer2 = require('./trimResultTransformer');
-
-var _trimResultTransformer3 = _interopRequireDefault(_trimResultTransformer2);
-
-var _stripIndentTransformer2 = require('./stripIndentTransformer');
-
-var _stripIndentTransformer3 = _interopRequireDefault(_stripIndentTransformer2);
-
-var _replaceResultTransformer2 = require('./replaceResultTransformer');
-
-var _replaceResultTransformer3 = _interopRequireDefault(_replaceResultTransformer2);
-
-var _replaceSubstitutionTransformer2 = require('./replaceSubstitutionTransformer');
-
-var _replaceSubstitutionTransformer3 = _interopRequireDefault(_replaceSubstitutionTransformer2);
-
-var _replaceStringTransformer2 = require('./replaceStringTransformer');
-
-var _replaceStringTransformer3 = _interopRequireDefault(_replaceStringTransformer2);
-
-var _inlineArrayTransformer2 = require('./inlineArrayTransformer');
-
-var _inlineArrayTransformer3 = _interopRequireDefault(_inlineArrayTransformer2);
-
-var _splitStringTransformer2 = require('./splitStringTransformer');
-
-var _splitStringTransformer3 = _interopRequireDefault(_splitStringTransformer2);
-
-var _removeNonPrintingValuesTransformer2 = require('./removeNonPrintingValuesTransformer');
-
-var _removeNonPrintingValuesTransformer3 = _interopRequireDefault(_removeNonPrintingValuesTransformer2);
-
-var _commaLists2 = require('./commaLists');
-
-var _commaLists3 = _interopRequireDefault(_commaLists2);
-
-var _commaListsAnd2 = require('./commaListsAnd');
-
-var _commaListsAnd3 = _interopRequireDefault(_commaListsAnd2);
-
-var _commaListsOr2 = require('./commaListsOr');
-
-var _commaListsOr3 = _interopRequireDefault(_commaListsOr2);
-
-var _html2 = require('./html');
-
-var _html3 = _interopRequireDefault(_html2);
-
-var _codeBlock2 = require('./codeBlock');
-
-var _codeBlock3 = _interopRequireDefault(_codeBlock2);
-
-var _source2 = require('./source');
-
-var _source3 = _interopRequireDefault(_source2);
-
-var _safeHtml2 = require('./safeHtml');
-
-var _safeHtml3 = _interopRequireDefault(_safeHtml2);
-
-var _oneLine2 = require('./oneLine');
-
-var _oneLine3 = _interopRequireDefault(_oneLine2);
-
-var _oneLineTrim2 = require('./oneLineTrim');
-
-var _oneLineTrim3 = _interopRequireDefault(_oneLineTrim2);
-
-var _oneLineCommaLists2 = require('./oneLineCommaLists');
-
-var _oneLineCommaLists3 = _interopRequireDefault(_oneLineCommaLists2);
-
-var _oneLineCommaListsOr2 = require('./oneLineCommaListsOr');
-
-var _oneLineCommaListsOr3 = _interopRequireDefault(_oneLineCommaListsOr2);
-
-var _oneLineCommaListsAnd2 = require('./oneLineCommaListsAnd');
-
-var _oneLineCommaListsAnd3 = _interopRequireDefault(_oneLineCommaListsAnd2);
-
-var _inlineLists2 = require('./inlineLists');
-
-var _inlineLists3 = _interopRequireDefault(_inlineLists2);
-
-var _oneLineInlineLists2 = require('./oneLineInlineLists');
-
-var _oneLineInlineLists3 = _interopRequireDefault(_oneLineInlineLists2);
-
-var _stripIndent2 = require('./stripIndent');
-
-var _stripIndent3 = _interopRequireDefault(_stripIndent2);
-
-var _stripIndents2 = require('./stripIndents');
-
-var _stripIndents3 = _interopRequireDefault(_stripIndents2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.TemplateTag = _TemplateTag3.default;
-
-// transformers
-// core
-
-exports.trimResultTransformer = _trimResultTransformer3.default;
-exports.stripIndentTransformer = _stripIndentTransformer3.default;
-exports.replaceResultTransformer = _replaceResultTransformer3.default;
-exports.replaceSubstitutionTransformer = _replaceSubstitutionTransformer3.default;
-exports.replaceStringTransformer = _replaceStringTransformer3.default;
-exports.inlineArrayTransformer = _inlineArrayTransformer3.default;
-exports.splitStringTransformer = _splitStringTransformer3.default;
-exports.removeNonPrintingValuesTransformer = _removeNonPrintingValuesTransformer3.default;
-
-// tags
-
-exports.commaLists = _commaLists3.default;
-exports.commaListsAnd = _commaListsAnd3.default;
-exports.commaListsOr = _commaListsOr3.default;
-exports.html = _html3.default;
-exports.codeBlock = _codeBlock3.default;
-exports.source = _source3.default;
-exports.safeHtml = _safeHtml3.default;
-exports.oneLine = _oneLine3.default;
-exports.oneLineTrim = _oneLineTrim3.default;
-exports.oneLineCommaLists = _oneLineCommaLists3.default;
-exports.oneLineCommaListsOr = _oneLineCommaListsOr3.default;
-exports.oneLineCommaListsAnd = _oneLineCommaListsAnd3.default;
-exports.inlineLists = _inlineLists3.default;
-exports.oneLineInlineLists = _oneLineInlineLists3.default;
-exports.stripIndent = _stripIndent3.default;
-exports.stripIndents = _stripIndents3.default;
-
-var commonTags = /*#__PURE__*/Object.freeze({
-  __proto__: null
-});
-
-const { stripIndent: stripIndent$2 } = commonTags;
 // Build object query
 function objectQuery$1(node) {
     let str = '';
@@ -158,7 +15,7 @@ function objectQuery$1(node) {
             str = `object: { ${calleeQuery(node.callee)} }`;
             break;
         case 'MemberExpression':
-            str = stripIndent$2 `
+            str = commonTags.stripIndent `
       object: { ${objectQuery$1(node.object)} ,
         property: { name: '${node.property.name}' }
       }`;
@@ -188,7 +45,7 @@ function calleeQuery(node) {
                 console.log('calleeQuery::property => ', property.type);
                 break;
         }
-        str = stripIndent$2 `callee: {
+        str = commonTags.stripIndent `callee: {
       ${obj},
       ${prop}
     }`;
@@ -246,7 +103,7 @@ function callExpressionQuery$1(node) {
         return temp;
     }).join('\n  && ');
     if (filteredArgs.length > 0) {
-        str = stripIndent$2 `
+        str = commonTags.stripIndent `
   root.find(j.CallExpression, {
     ${calleeQuery(node.callee)}
   })
@@ -255,7 +112,7 @@ function callExpressionQuery$1(node) {
   })`;
     }
     else {
-        str = stripIndent$2 `
+        str = commonTags.stripIndent `
   root.find(j.CallExpression, {
     ${calleeQuery(node.callee)}
   })`;
@@ -349,7 +206,7 @@ function assignmentExpression$2(node) {
             _right = `right: { name: '${right.name}' }`;
             break;
         case 'MemberExpression':
-            _right = stripIndent$2 `
+            _right = commonTags.stripIndent `
       right: {
         ${objectQuery$1(right.object)},
         property: { name: '${right.property.name}' }
@@ -359,7 +216,7 @@ function assignmentExpression$2(node) {
             console.log('assignmentExpression => ', right.type);
             break;
     }
-    str = stripIndent$2 `
+    str = commonTags.stripIndent `
   root.find(j.AssignmentExpression, {
     operator: '${operator}',
     left: { name: '${left.name}' },
@@ -384,7 +241,6 @@ var query = /*#__PURE__*/Object.freeze({
   functionDeclaration: functionDeclaration$2
 });
 
-const { stripIndent: stripIndent$1 } = commonTags;
 // Build object query
 function objectQuery(node) {
     let str = '';
@@ -396,7 +252,7 @@ function objectQuery(node) {
             str = `object: { ${callee(node.callee)} }`;
             break;
         case 'MemberExpression':
-            str = stripIndent$1 `
+            str = commonTags.stripIndent `
       object: { ${objectQuery(node.object)} ,
         property: { name: '${node.property.name}' }
       }`;
@@ -426,7 +282,7 @@ function callee(node) {
                 console.log('calleeQuery::property => ', property.type);
                 break;
         }
-        str = stripIndent$1 `callee: {
+        str = commonTags.stripIndent `callee: {
       ${obj},
       ${prop}
     }`;
@@ -484,7 +340,7 @@ function callExpression(node) {
         return temp;
     }).join('\n  && ');
     if (filteredArgs.length > 0) {
-        str = stripIndent$1 `
+        str = commonTags.stripIndent `
   root.find(j.CallExpression, {
     ${callee(node.callee)}
   })
@@ -493,7 +349,7 @@ function callExpression(node) {
   })`;
     }
     else {
-        str = stripIndent$1 `
+        str = commonTags.stripIndent `
   root.find(j.CallExpression, {
     ${callee(node.callee)}
   })`;
@@ -598,7 +454,7 @@ function assignmentExpression$1(node) {
             _right = `right: { name: '${right.name}' }`;
             break;
         case 'MemberExpression':
-            _right = stripIndent$1 `
+            _right = commonTags.stripIndent `
       right: {
         ${objectQuery(right.object)},
         property: { name: '${right.property.name}' }
@@ -608,7 +464,7 @@ function assignmentExpression$1(node) {
             console.log('assignmentExpression => ', right.type);
             break;
     }
-    str = stripIndent$1 `
+    str = commonTags.stripIndent `
   root.find(j.AssignmentExpression, {
     operator: '${operator}',
     left: { name: '${left.name}' },
@@ -668,10 +524,9 @@ var babel = /*#__PURE__*/Object.freeze({
   dispatchNodes: dispatchNodes$2
 });
 
-const { stripIndent } = commonTags;
 function textNode(transform) {
     let str = '';
-    str = stripIndent `
+    str = commonTags.stripIndent `
   return {
     TextNode(node) {
       ${transform}
@@ -682,7 +537,7 @@ function textNode(transform) {
 function elementNode(node, transform) {
     let str = '';
     transform = transform || `node.tag = node.tag.split("").reverse().join("");`;
-    str = stripIndent `
+    str = commonTags.stripIndent `
   return {
     ElementNode(node) {
       if(node.tag === '${node.tag}') {
@@ -694,7 +549,7 @@ function elementNode(node, transform) {
 }
 function blockStatement(node, transform) {
     let str = '';
-    str = stripIndent `
+    str = commonTags.stripIndent `
   return {
     BlockStatement(node) {
       if(node.path.original === '${node.path.original}') {
@@ -706,7 +561,7 @@ function blockStatement(node, transform) {
 }
 function mustacheStatement(node, transform) {
     let str = '';
-    str = stripIndent `
+    str = commonTags.stripIndent `
   return {
     MustacheStatement(node) {
       if(node.path.original === '${node.path.original}') {

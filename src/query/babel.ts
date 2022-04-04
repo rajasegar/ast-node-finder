@@ -1,5 +1,4 @@
-import * as commonTags from 'common-tags';
-const { stripIndent } = commonTags;
+import { stripIndent } from 'common-tags';
 
 import { Node, Ast } from '../typings';
 

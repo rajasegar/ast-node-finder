@@ -261,18 +261,6 @@
     };
   };
 
-  var replaceStringTransformer = function replaceStringTransformer(replaceWhat, replaceWith) {
-    return {
-      onString: function onString(str) {
-        if (replaceWhat == null || replaceWith == null) {
-          throw new Error('replaceStringTransformer requires at least 2 arguments.');
-        }
-
-        return str.replace(replaceWhat, replaceWith);
-      }
-    };
-  };
-
   var defaults = {
     separator: '',
     conjunction: '',
@@ -349,66 +337,34 @@
     };
   };
 
-  var commaLists = new TemplateTag(inlineArrayTransformer({ separator: ',' }), stripIndentTransformer, trimResultTransformer);
+  new TemplateTag(inlineArrayTransformer({ separator: ',' }), stripIndentTransformer, trimResultTransformer);
 
-  var commaListsAnd = new TemplateTag(inlineArrayTransformer({ separator: ',', conjunction: 'and' }), stripIndentTransformer, trimResultTransformer);
+  new TemplateTag(inlineArrayTransformer({ separator: ',', conjunction: 'and' }), stripIndentTransformer, trimResultTransformer);
 
-  var commaListsOr = new TemplateTag(inlineArrayTransformer({ separator: ',', conjunction: 'or' }), stripIndentTransformer, trimResultTransformer);
+  new TemplateTag(inlineArrayTransformer({ separator: ',', conjunction: 'or' }), stripIndentTransformer, trimResultTransformer);
 
-  var html = new TemplateTag(splitStringTransformer('\n'), removeNonPrintingValuesTransformer, inlineArrayTransformer, stripIndentTransformer, trimResultTransformer);
+  new TemplateTag(splitStringTransformer('\n'), removeNonPrintingValuesTransformer, inlineArrayTransformer, stripIndentTransformer, trimResultTransformer);
 
-  var safeHtml = new TemplateTag(splitStringTransformer('\n'), inlineArrayTransformer, stripIndentTransformer, trimResultTransformer, replaceSubstitutionTransformer(/&/g, '&amp;'), replaceSubstitutionTransformer(/</g, '&lt;'), replaceSubstitutionTransformer(/>/g, '&gt;'), replaceSubstitutionTransformer(/"/g, '&quot;'), replaceSubstitutionTransformer(/'/g, '&#x27;'), replaceSubstitutionTransformer(/`/g, '&#x60;'));
+  new TemplateTag(splitStringTransformer('\n'), inlineArrayTransformer, stripIndentTransformer, trimResultTransformer, replaceSubstitutionTransformer(/&/g, '&amp;'), replaceSubstitutionTransformer(/</g, '&lt;'), replaceSubstitutionTransformer(/>/g, '&gt;'), replaceSubstitutionTransformer(/"/g, '&quot;'), replaceSubstitutionTransformer(/'/g, '&#x27;'), replaceSubstitutionTransformer(/`/g, '&#x60;'));
 
-  var oneLine = new TemplateTag(replaceResultTransformer(/(?:\n(?:\s*))+/g, ' '), trimResultTransformer);
+  new TemplateTag(replaceResultTransformer(/(?:\n(?:\s*))+/g, ' '), trimResultTransformer);
 
-  var oneLineTrim = new TemplateTag(replaceResultTransformer(/(?:\n\s*)/g, ''), trimResultTransformer);
+  new TemplateTag(replaceResultTransformer(/(?:\n\s*)/g, ''), trimResultTransformer);
 
-  var oneLineCommaLists = new TemplateTag(inlineArrayTransformer({ separator: ',' }), replaceResultTransformer(/(?:\s+)/g, ' '), trimResultTransformer);
+  new TemplateTag(inlineArrayTransformer({ separator: ',' }), replaceResultTransformer(/(?:\s+)/g, ' '), trimResultTransformer);
 
-  var oneLineCommaListsOr = new TemplateTag(inlineArrayTransformer({ separator: ',', conjunction: 'or' }), replaceResultTransformer(/(?:\s+)/g, ' '), trimResultTransformer);
+  new TemplateTag(inlineArrayTransformer({ separator: ',', conjunction: 'or' }), replaceResultTransformer(/(?:\s+)/g, ' '), trimResultTransformer);
 
-  var oneLineCommaListsAnd = new TemplateTag(inlineArrayTransformer({ separator: ',', conjunction: 'and' }), replaceResultTransformer(/(?:\s+)/g, ' '), trimResultTransformer);
+  new TemplateTag(inlineArrayTransformer({ separator: ',', conjunction: 'and' }), replaceResultTransformer(/(?:\s+)/g, ' '), trimResultTransformer);
 
-  var inlineLists = new TemplateTag(inlineArrayTransformer, stripIndentTransformer, trimResultTransformer);
+  new TemplateTag(inlineArrayTransformer, stripIndentTransformer, trimResultTransformer);
 
-  var oneLineInlineLists = new TemplateTag(inlineArrayTransformer, replaceResultTransformer(/(?:\s+)/g, ' '), trimResultTransformer);
+  new TemplateTag(inlineArrayTransformer, replaceResultTransformer(/(?:\s+)/g, ' '), trimResultTransformer);
 
-  var stripIndent$3 = new TemplateTag(stripIndentTransformer, trimResultTransformer);
+  var stripIndent = new TemplateTag(stripIndentTransformer, trimResultTransformer);
 
-  var stripIndents = new TemplateTag(stripIndentTransformer('all'), trimResultTransformer);
+  new TemplateTag(stripIndentTransformer('all'), trimResultTransformer);
 
-  // core
-
-  var commonTags = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    TemplateTag: TemplateTag,
-    trimResultTransformer: trimResultTransformer,
-    stripIndentTransformer: stripIndentTransformer,
-    replaceResultTransformer: replaceResultTransformer,
-    replaceSubstitutionTransformer: replaceSubstitutionTransformer,
-    replaceStringTransformer: replaceStringTransformer,
-    inlineArrayTransformer: inlineArrayTransformer,
-    splitStringTransformer: splitStringTransformer,
-    removeNonPrintingValuesTransformer: removeNonPrintingValuesTransformer,
-    commaLists: commaLists,
-    commaListsAnd: commaListsAnd,
-    commaListsOr: commaListsOr,
-    html: html,
-    codeBlock: html,
-    source: html,
-    safeHtml: safeHtml,
-    oneLine: oneLine,
-    oneLineTrim: oneLineTrim,
-    oneLineCommaLists: oneLineCommaLists,
-    oneLineCommaListsOr: oneLineCommaListsOr,
-    oneLineCommaListsAnd: oneLineCommaListsAnd,
-    inlineLists: inlineLists,
-    oneLineInlineLists: oneLineInlineLists,
-    stripIndent: stripIndent$3,
-    stripIndents: stripIndents
-  });
-
-  const { stripIndent: stripIndent$2 } = commonTags;
   // Build object query
   function objectQuery$1(node) {
       let str = '';
@@ -420,7 +376,7 @@
               str = `object: { ${calleeQuery(node.callee)} }`;
               break;
           case 'MemberExpression':
-              str = stripIndent$2 `
+              str = stripIndent `
       object: { ${objectQuery$1(node.object)} ,
         property: { name: '${node.property.name}' }
       }`;
@@ -450,7 +406,7 @@
                   console.log('calleeQuery::property => ', property.type);
                   break;
           }
-          str = stripIndent$2 `callee: {
+          str = stripIndent `callee: {
       ${obj},
       ${prop}
     }`;
@@ -508,7 +464,7 @@
           return temp;
       }).join('\n  && ');
       if (filteredArgs.length > 0) {
-          str = stripIndent$2 `
+          str = stripIndent `
   root.find(j.CallExpression, {
     ${calleeQuery(node.callee)}
   })
@@ -517,7 +473,7 @@
   })`;
       }
       else {
-          str = stripIndent$2 `
+          str = stripIndent `
   root.find(j.CallExpression, {
     ${calleeQuery(node.callee)}
   })`;
@@ -611,7 +567,7 @@
               _right = `right: { name: '${right.name}' }`;
               break;
           case 'MemberExpression':
-              _right = stripIndent$2 `
+              _right = stripIndent `
       right: {
         ${objectQuery$1(right.object)},
         property: { name: '${right.property.name}' }
@@ -621,7 +577,7 @@
               console.log('assignmentExpression => ', right.type);
               break;
       }
-      str = stripIndent$2 `
+      str = stripIndent `
   root.find(j.AssignmentExpression, {
     operator: '${operator}',
     left: { name: '${left.name}' },
@@ -646,7 +602,6 @@
     functionDeclaration: functionDeclaration$2
   });
 
-  const { stripIndent: stripIndent$1 } = commonTags;
   // Build object query
   function objectQuery(node) {
       let str = '';
@@ -658,7 +613,7 @@
               str = `object: { ${callee(node.callee)} }`;
               break;
           case 'MemberExpression':
-              str = stripIndent$1 `
+              str = stripIndent `
       object: { ${objectQuery(node.object)} ,
         property: { name: '${node.property.name}' }
       }`;
@@ -688,7 +643,7 @@
                   console.log('calleeQuery::property => ', property.type);
                   break;
           }
-          str = stripIndent$1 `callee: {
+          str = stripIndent `callee: {
       ${obj},
       ${prop}
     }`;
@@ -746,7 +701,7 @@
           return temp;
       }).join('\n  && ');
       if (filteredArgs.length > 0) {
-          str = stripIndent$1 `
+          str = stripIndent `
   root.find(j.CallExpression, {
     ${callee(node.callee)}
   })
@@ -755,7 +710,7 @@
   })`;
       }
       else {
-          str = stripIndent$1 `
+          str = stripIndent `
   root.find(j.CallExpression, {
     ${callee(node.callee)}
   })`;
@@ -860,7 +815,7 @@
               _right = `right: { name: '${right.name}' }`;
               break;
           case 'MemberExpression':
-              _right = stripIndent$1 `
+              _right = stripIndent `
       right: {
         ${objectQuery(right.object)},
         property: { name: '${right.property.name}' }
@@ -870,7 +825,7 @@
               console.log('assignmentExpression => ', right.type);
               break;
       }
-      str = stripIndent$1 `
+      str = stripIndent `
   root.find(j.AssignmentExpression, {
     operator: '${operator}',
     left: { name: '${left.name}' },
@@ -930,7 +885,6 @@
     dispatchNodes: dispatchNodes$2
   });
 
-  const { stripIndent } = commonTags;
   function textNode(transform) {
       let str = '';
       str = stripIndent `
