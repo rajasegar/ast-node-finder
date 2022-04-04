@@ -1,3 +1,10 @@
+## [3.0.7](https://github.com/rajasegar/ast-node-finder/compare/v3.0.6...v3.0.7) (2022-04-04)
+
+
+### Bug Fixes
+
+* glimmer api export issue ([3dc4b58](https://github.com/rajasegar/ast-node-finder/commit/3dc4b586baee83ec14a353a6ded21329c96b3052))
+
 ## [3.0.6](https://github.com/rajasegar/ast-node-finder/compare/v3.0.5...v3.0.6) (2022-04-04)
 
 
