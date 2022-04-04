@@ -1,3 +1,10 @@
+## [3.0.5](https://github.com/rajasegar/ast-node-finder/compare/v3.0.4...v3.0.5) (2022-04-04)
+
+
+### Bug Fixes
+
+* add dist folder to npm output ([519f574](https://github.com/rajasegar/ast-node-finder/commit/519f574a69cb36c595f09ba2be15d313472cfe60))
+
 ## [3.0.4](https://github.com/rajasegar/ast-node-finder/compare/v3.0.3...v3.0.4) (2022-03-31)
 
 
