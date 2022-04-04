@@ -951,12 +951,10 @@
       });
       return _ast;
   }
-  module.exports = {
-      dispatchNodes: dispatchNodes$1
-  };
 
   var glimmer = /*#__PURE__*/Object.freeze({
-    __proto__: null
+    __proto__: null,
+    dispatchNodes: dispatchNodes$1
   });
 
   const { assignmentExpression, callExpressionQuery, memberExpressionQuery, literalQuery, newExpressionQuery, expressionStatementQuery, variableDeclaratorQuery, importDeclarationQuery, exportDefaultDeclarationQuery, identifier, functionDeclaration } = query;

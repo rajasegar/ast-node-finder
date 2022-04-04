@@ -78,6 +78,6 @@ function dispatchNodes(ast: Ast, transform = 'return node;'): string[] {
   return _ast;
 }
 
-module.exports =  {
+export {
   dispatchNodes
 };
