@@ -5,7 +5,7 @@ specifiers:
   '@babel/preset-env': 7.16.11
   '@babel/preset-typescript': 7.16.7
   '@rollup/plugin-commonjs': 21.0.3
-  '@rollup/plugin-node-resolve': 13.1.3
+  '@rollup/plugin-node-resolve': 13.2.0
   '@rollup/plugin-typescript': 8.3.1
   '@semantic-release/changelog': 6.0.1
   '@semantic-release/git': 10.0.1
@@ -36,7 +36,7 @@ devDependencies:
   '@babel/preset-env': 7.16.11_@babel+core@7.17.9
   '@babel/preset-typescript': 7.16.7_@babel+core@7.17.9
   '@rollup/plugin-commonjs': 21.0.3_rollup@2.70.1
-  '@rollup/plugin-node-resolve': 13.1.3_rollup@2.70.1
+  '@rollup/plugin-node-resolve': 13.2.0_rollup@2.70.1
   '@rollup/plugin-typescript': 8.3.1_8fb0118e9d69f3600cbb8f144f7d456c
   '@semantic-release/changelog': 6.0.1_semantic-release@19.0.2
   '@semantic-release/git': 10.0.1_semantic-release@19.0.2
@@ -1718,8 +1718,8 @@ packages:
       rollup: 2.70.1
     dev: true
 
-  /@rollup/plugin-node-resolve/13.1.3_rollup@2.70.1:
-    resolution: {integrity: sha512-BdxNk+LtmElRo5d06MGY4zoepyrXX1tkzX2hrnPEZ53k78GuOMWLqmJDGIIOPwVRIFZrLQOo+Yr6KtCuLIA0AQ==}
+  /@rollup/plugin-node-resolve/13.2.0_rollup@2.70.1:
+    resolution: {integrity: sha512-GuUIUyIKq7EjQxB51XSn6zPHYo+cILQQBYOGYvFFNxws2OVOqCBShAoof2hFrV8bAZzZGDBDQ8m2iUt8SLOUkg==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
       rollup: ^2.42.0
