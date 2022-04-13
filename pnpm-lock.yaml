@@ -6,7 +6,7 @@ specifiers:
   '@babel/preset-typescript': 7.16.7
   '@rollup/plugin-commonjs': 21.0.3
   '@rollup/plugin-node-resolve': 13.2.0
-  '@rollup/plugin-typescript': 8.3.1
+  '@rollup/plugin-typescript': 8.3.2
   '@semantic-release/changelog': 6.0.1
   '@semantic-release/git': 10.0.1
   '@types/common-tags': 1.8.1
@@ -37,7 +37,7 @@ devDependencies:
   '@babel/preset-typescript': 7.16.7_@babel+core@7.17.9
   '@rollup/plugin-commonjs': 21.0.3_rollup@2.70.1
   '@rollup/plugin-node-resolve': 13.2.0_rollup@2.70.1
-  '@rollup/plugin-typescript': 8.3.1_8fb0118e9d69f3600cbb8f144f7d456c
+  '@rollup/plugin-typescript': 8.3.2_8fb0118e9d69f3600cbb8f144f7d456c
   '@semantic-release/changelog': 6.0.1_semantic-release@19.0.2
   '@semantic-release/git': 10.0.1_semantic-release@19.0.2
   '@types/common-tags': 1.8.1
@@ -1733,8 +1733,8 @@ packages:
       rollup: 2.70.1
     dev: true
 
-  /@rollup/plugin-typescript/8.3.1_8fb0118e9d69f3600cbb8f144f7d456c:
-    resolution: {integrity: sha512-84rExe3ICUBXzqNX48WZV2Jp3OddjTMX97O2Py6D1KJaGSwWp0mDHXj+bCGNJqWHIEKDIT2U0sDjhP4czKi6cA==}
+  /@rollup/plugin-typescript/8.3.2_8fb0118e9d69f3600cbb8f144f7d456c:
+    resolution: {integrity: sha512-MtgyR5LNHZr3GyN0tM7gNO9D0CS+Y+vflS4v/PHmrX17JCkHUYKvQ5jN5o3cz1YKllM3duXUqu3yOHwMPUxhDg==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
       rollup: ^2.14.0
