@@ -4,7 +4,7 @@ specifiers:
   '@babel/core': 7.17.9
   '@babel/preset-env': 7.16.11
   '@babel/preset-typescript': 7.16.7
-  '@rollup/plugin-commonjs': 21.0.3
+  '@rollup/plugin-commonjs': 21.1.0
   '@rollup/plugin-node-resolve': 13.2.1
   '@rollup/plugin-typescript': 8.3.2
   '@semantic-release/changelog': 6.0.1
@@ -35,7 +35,7 @@ devDependencies:
   '@babel/core': 7.17.9
   '@babel/preset-env': 7.16.11_@babel+core@7.17.9
   '@babel/preset-typescript': 7.16.7_@babel+core@7.17.9
-  '@rollup/plugin-commonjs': 21.0.3_rollup@2.70.2
+  '@rollup/plugin-commonjs': 21.1.0_rollup@2.70.2
   '@rollup/plugin-node-resolve': 13.2.1_rollup@2.70.2
   '@rollup/plugin-typescript': 8.3.2_eaab4980cb5a437133211ecd98513266
   '@semantic-release/changelog': 6.0.1_semantic-release@19.0.2
@@ -1702,8 +1702,8 @@ packages:
       '@octokit/openapi-types': 11.2.0
     dev: true
 
-  /@rollup/plugin-commonjs/21.0.3_rollup@2.70.2:
-    resolution: {integrity: sha512-ThGfwyvcLc6cfP/MWxA5ACF+LZCvsuhUq7V5134Az1oQWsiC7lNpLT4mJI86WQunK7BYmpUiHmMk2Op6OAHs0g==}
+  /@rollup/plugin-commonjs/21.1.0_rollup@2.70.2:
+    resolution: {integrity: sha512-6ZtHx3VHIp2ReNNDxHjuUml6ur+WcQ28N1yHgCQwsbNkQg2suhxGMDQGJOn/KuDxKtd1xuZP5xSTwBA4GQ8hbA==}
     engines: {node: '>= 8.0.0'}
     peerDependencies:
       rollup: ^2.38.3
