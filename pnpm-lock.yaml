@@ -23,7 +23,7 @@ specifiers:
   rollup: 2.70.2
   semantic-release: 19.0.2
   ts-node: 10.7.0
-  tslib: 2.3.1
+  tslib: 2.4.0
   typescript: 4.6.3
 
 dependencies:
@@ -37,7 +37,7 @@ devDependencies:
   '@babel/preset-typescript': 7.16.7_@babel+core@7.17.9
   '@rollup/plugin-commonjs': 21.1.0_rollup@2.70.2
   '@rollup/plugin-node-resolve': 13.2.1_rollup@2.70.2
-  '@rollup/plugin-typescript': 8.3.2_eaab4980cb5a437133211ecd98513266
+  '@rollup/plugin-typescript': 8.3.2_056aba5e56e0ab5307259a29131f3fbe
   '@semantic-release/changelog': 6.0.1_semantic-release@19.0.2
   '@semantic-release/git': 10.0.1_semantic-release@19.0.2
   '@types/common-tags': 1.8.1
@@ -51,7 +51,7 @@ devDependencies:
   rollup: 2.70.2
   semantic-release: 19.0.2
   ts-node: 10.7.0_typescript@4.6.3
-  tslib: 2.3.1
+  tslib: 2.4.0
   typescript: 4.6.3
 
 packages:
@@ -1733,7 +1733,7 @@ packages:
       rollup: 2.70.2
     dev: true
 
-  /@rollup/plugin-typescript/8.3.2_eaab4980cb5a437133211ecd98513266:
+  /@rollup/plugin-typescript/8.3.2_056aba5e56e0ab5307259a29131f3fbe:
     resolution: {integrity: sha512-MtgyR5LNHZr3GyN0tM7gNO9D0CS+Y+vflS4v/PHmrX17JCkHUYKvQ5jN5o3cz1YKllM3duXUqu3yOHwMPUxhDg==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
@@ -1744,7 +1744,7 @@ packages:
       '@rollup/pluginutils': 3.1.0_rollup@2.70.2
       resolve: 1.22.0
       rollup: 2.70.2
-      tslib: 2.3.1
+      tslib: 2.4.0
       typescript: 4.6.3
     dev: true
 
@@ -2208,7 +2208,7 @@ packages:
     resolution: {integrity: sha512-O0yuUDnZeQDL+ncNGlJ78BiO4jnYI3bvMsD5prT0/nsgijG/LpNBIr63gTjVTNsiGkgQhiyCShTgxt8oXOrklA==}
     engines: {node: '>=4'}
     dependencies:
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: false
 
   /async-promise-queue/1.0.5:
@@ -5173,7 +5173,7 @@ packages:
       ast-types: 0.14.2
       esprima: 4.0.1
       source-map: 0.6.1
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: false
 
   /redent/3.0.0:
@@ -5830,8 +5830,8 @@ packages:
       yn: 3.1.1
     dev: true
 
-  /tslib/2.3.1:
-    resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
+  /tslib/2.4.0:
+    resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
 
   /tunnel-agent/0.6.0:
     resolution: {integrity: sha1-J6XeoGs2sEoKmWZ3SykIaPD8QP0=}
