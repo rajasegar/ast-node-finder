@@ -28,8 +28,8 @@
   "repository": "https://github.com/rajasegar/ast-node-finder",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "7.17.9",
-    "@babel/preset-env": "7.16.11",
+    "@babel/core": "7.17.10",
+    "@babel/preset-env": "7.17.10",
     "@babel/preset-typescript": "7.16.7",
     "@rollup/plugin-commonjs": "21.1.0",
     "@rollup/plugin-node-resolve": "13.2.1",
